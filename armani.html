@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frilux | Giorgio Armani | Brand</title>
+
+    <!-- attach the JS files -->
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <link  href="dist/jquery.fancybox.min.css" rel="stylesheet">
+    <script src="dist/jquery.fancybox.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+
+
+    <style media="screen">
+
+      *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+      }
+
+      body{
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .navbar{
+        display:flex;
+        align-items:center;
+        padding:20px;
+      }
+
+      nav{
+        flex:1;
+        text-align:right;
+      }
+
+      nav ul{
+        display:inline-block;
+        list-style-type:none;
+      }
+
+      nav ul li{
+        display:inline-block;
+        margin-right:20px;
+      }
+
+      a{
+        text-decoration:none;
+        color:#555;
+      }
+
+      nav ul li::after{
+        content:'';
+        width:0%;
+        height:2px;
+        background:#555;
+        display:block;
+        margin:auto;
+        transition:0.5s;
+      }
+
+      nav ul li:hover::after{
+        width:100%;
+      }
+
+      p{
+        color:#555;
+      }
+
+      .container{
+        max-width:1300px;
+        margin:auto;
+        padding-left:25px;
+        padding-right:25px;
+      }
+
+      .row{
+        display:flex;
+        align-items:center;
+        flex-wrap:wrap;
+        justify-content:space-around;
+      }
+
+      .row .info{
+        text-align:center;
+      }
+
+      .col-2{
+        flex-basis:50%;
+        min-width:300px;
+        color:#555;
+      }
+
+      .col-2 img{
+        max-width:100%;
+        padding:50px 0;
+      }
+
+      .col-2 h1{
+        font-size:50px;
+        line-height:60px;
+        margin:25px 0;
+      }
+
+      .header{
+        background:#ffffcc;
+      }
+
+      .header .row{
+        margin-top:70px;
+      }
+
+      .categories{
+        margin:70px 0;
+      }
+
+      .col-3{
+        flex-basis:30%;
+        min-width:250px;
+        margin-bottom:30px;
+        transition:transform 0.5s;
+      }
+
+      .col-3 img{
+        width:100%;
+        height:250px;
+      }
+
+      .col-3 p{
+        font-size:14px;
+      }
+
+      .col-3:hover{
+        transform:translateY(-5px);
+      }
+
+      .small-container{
+        max-width:1080px;
+        margin:auto;
+        padding-left:25px;
+        padding-right:25px;
+        color:#555;
+      }
+
+      .col-4{
+        flex-basis:25%;
+        padding:10px;
+        min-width:200px;
+        margin-bottom:50px;
+        transition:transform 0.5s;
+      }
+
+      .col-4 img{
+        width:100%;
+        height:220px;
+      }
+
+      .title{
+        text-align:center;
+        margin:0 auto 80px;
+        position:relative;
+        line-height:60px;
+        color:#555;
+      }
+
+      .title::after{
+        content:'';
+        background:#ff9966;
+        width:80px;
+        height:5px;
+        border-radius:5px;
+        position:absolute;
+        bottom:0;
+        left:50%;
+        transform:translateX(-50%);
+      }
+
+      h4{
+        color:#555;
+        font-weight:normal;
+      }
+
+      .col-4 p{
+        font-size:14px;
+      }
+
+      .col-4:hover{
+        transform:translateY(-5px);
+      }
+
+      /* offer */
+      .offer{
+        background:radial-gradient(#fff,#ffffcc);
+        margin-top:80px;
+        padding:30px 0;
+      }
+
+      .col-2 .offer-img{
+        padding:50px;
+      }
+
+      small{
+        color:#555;
+      }
+
+      /* brands */
+      .brands{
+        margin:100px auto;
+      }
+
+      .col-5{
+        width:160px;
+      }
+
+      .col-5 img{
+        width:100%;
+        cursor:pointer;
+      }
+
+      .col-5 img:hover{
+        box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
+      }
+
+      /* footer */
+      .footer{
+        background:#000;
+        color:#8a8a8a;
+        font-size:14px;
+        padding:60px 0 20px;
+      }
+
+      .footer h3{
+        color:#fff;
+        margin-bottom:20px;
+      }
+
+      .footer-col-3{
+        min-width:250px;
+        margin-bottom:20px;
+        flex:1;
+        text-align:center;
+      }
+
+      ul{
+        list-style-type:none;
+      }
+
+      .footer hr{
+        border:none;
+        background:#b5b5b5;
+        height:1px;
+        margin:20px 0;
+      }
+
+      .copyright{
+        text-align:center;
+      }
+
+      .menu-icon{
+        width:28px;
+        margin-left:20px;
+        display:none;
+      }
+
+      /* media query for menu */
+      @media only screen and (max-width:800px){
+        .nav-links ul{
+          position:absolute;
+          top:70px;
+          left:0;
+          background:#333;
+          width:100%;
+          overflow:hidden;
+          transition: max-height 0.5s;
+        }
+
+        .nav-links ul li{
+          display:block;
+          margin-right:50px;
+          margin-top:10px;
+          margin-top:10px;
+        }
+
+        .nav-links ul li a{
+          color:#fff;
+        }
+
+        .menu-icon{
+          display:block;
+          cursor:pointer;
+        }
+      }
+
+      /* media query for less than 600 screen size */
+      @media only screen and (max-width:600px){
+        .row{
+          text-align:center;
+        }
+
+        .col-2, .col-3, .col-4{
+          flex-basis:100%;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+
+<!-- **************************************************************navigation bar************************************************************* -->
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <a href="index.html"><img src="images/logo1.png" alt="" width="125px"></a>
+          </div>
+          <nav class="nav-links">
+            <ul id="MenuItems">
+              <li> <a href="index.html">HOME</a> </li>
+              <li> <a href="gallery.html">GALLERY</a> </li>
+              <li> <a href="contact.html">CONTACT US</a> </li>
+              <li> <a href="sign-up.html">SIGN UP</a> </li>
+            </ul>
+          </nav>
+          <img src="images/cart.png" alt="" width="30px" height="30px" hidden>
+          <img src="images/menu.png" alt="" class="menu-icon" onclick="menutoggle()">
+        </div>
+      </div>
+    </div>
+
+
+<!-- ******************************************************************heading*************************************************************** -->
+    <div class="small-container">
+      <div class="row">
+        <h1>Giorgio Armani</h1>
+        <p class="info">Emporio Armani is one of the iconic fashion  line launched by Giorgio Armani in 1981.
+        The Giorgio Armani collection epitomises style, elegance and extreme attention to minute details.
+        These sunglasses are made from high quality and exclusive materials.</p>
+      </div>
+    </div>
+
+
+<!-- **************************************************************armani products***********************************************************-->
+    <div class="categories">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-3">
+            <a data-fancybox="gallery" href="images/armani-pro-1.jpg">
+              <img src="images/armani-pro-1.jpg" alt=""></a>
+              <h4>Pillow man sunglasses</h4>
+              <p> <strong>Color:</strong> Matte grey <br> <strong>Material:</strong> Plastic & nylon fibre </p>
+              <p> <strong>Price:</strong> $154.00</p>
+          </div>
+
+          <div class="col-3">
+            <a data-fancybox="gallery" href="images/armani-women-pro-1.jpg">
+              <img src="images/armani-women-pro-1.jpg" alt=""></a>
+              <h4>Round woman sunglasses</h4>
+              <p> <strong>Color:</strong> Green <br> <strong>Material:</strong> Metal & plastic </p>
+              <p> <strong>Price:</strong> $220.00</p>
+          </div>
+
+          <div class="col-3">
+            <a data-fancybox="gallery" href="images/armani-pro-2.jpg">
+              <img src="images/armani-pro-2.jpg" alt=""></a>
+              <h4>Panthos man sunglasses</h4>
+              <p> <strong>Color:</strong> Black <br> <strong>Material:</strong> Metal & nylon fibre </p>
+              <p> <strong>Price:</strong> $194.00</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+<!-- *****************************************************************featured products****************************************************** -->
+    <div class="small-container">
+      <h2 class="title">Featured Products</h2>
+      <div class="row">
+        <div class="col-4">
+          <a data-fancybox="gallery" href="images/armani-women-pro-2.jpg">
+            <img src="images/armani-women-pro-2.jpg" alt=""></a>
+            <h4>Sun - glasses</h4>
+            <br>
+            <p> <strong>Color:</strong> Brown <br> <strong>Material:</strong> Acetate & plastic</p>
+            <p> <strong>Price:</strong> $154.00</p>
+        </div>
+
+        <div class="col-4">
+          <a data-fancybox="gallery" href="images/armani-pro-3.jpg">
+            <img src="images/armani-pro-3.jpg" alt=""></a>
+            <h4>Geometric man sunglasses flip-up clip-on</h4>
+            <p> <strong>Color:</strong> Dark grey <br> <strong>Material:</strong> Metal </p>
+            <p> <strong>Price:</strong> $190.00</p>
+        </div>
+
+        <div class="col-4">
+          <a data-fancybox="gallery" href="images/armani-pro-4.jpg">
+            <img src="images/armani-pro-4.jpg" alt=""></a>
+            <h4>Sun - glasses</h4>
+            <br>
+            <p> <strong>Color:</strong> Dark brown <br> <strong>Material:</strong> Acetate & plastic </p>
+            <p> <strong>Price:</strong> $178.00</p>
+        </div>
+
+        <div class="col-4">
+          <a data-fancybox="gallery" href="images/armani-women-pro-3.jpg">
+            <img src="images/armani-women-pro-3.jpg" alt=""></a>
+            <h4>Women's cat-eye sunglasses</h4>
+            <br>
+            <p> <strong>Color:</strong> Brown & silver <br> <strong>Material:</strong> Metal </p>
+            <p> <strong>Price:</strong> $188.00</p>
+        </div>
+
+      </div>
+    </div>
+
+
+<!-- *********************************************************************offer************************************************************ -->
+    <div class="offer">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-2">
+            <img src="images/armani-model.jpg" alt="" class="offer-img">
+          </div>
+          <div class="col-2">
+            <p>Exclusively available on Frilux</p>
+            <h1>Latest Summer collection</h1>
+            <small>Grab the finest summer Ar8117 Phantos-frame sunglasses for just <s>$310.00</s>
+              <strong>$159.00</strong>.</small>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- *********************************************************************brands********************************************************* -->
+    <div class="brands">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-5">
+            <a href="gucci.html"><img src="images/gucci-logo.jpg" alt=""></a>
+          </div>
+          <div class="col-5">
+            <a href="ray-ban.html"><img src="images/rayban-logo.jpg" alt=""></a>
+          </div>
+          <div class="col-5">
+            <a href="burberry.html"><img src="images/burberry-logo.jpg" alt=""></a>
+          </div>
+          <div class="col-5">
+            <a href="oakley.html"><img src="images/oakley-logo.jpg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- ************************************************************************footer************************************************************* -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-3">
+            <h3>Frilux Sunshades</h3>
+            <p>Have fun in the sun with Sunglasses from Filux, <br> which provide large range of sunglasses
+              from world class brands.</p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li> <a href="sign-up.html">Sign Up</a> </li>
+              <li> <a href="contact.html">Contact Us</a> </li>
+              <li> <a href="construction.html">Privacy policy</a> </li>
+            </ul>
+          </div>
+          <div class="footer-col-3">
+            <h3>Follow Us</h3>
+            <ul>
+              <li> <a href="construction.html">Facebook</a> </li>
+              <li> <a href="contact.html">Whatsapp</a> </li>
+              <li> <a href="construction.html">Instagram</a> </li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+        <p class="copyright"> &copy; Copyright 2021 | Geex Solutions <br> Images are used for illustration purpose only </p>
+      </div>
+    </div>
+
+
+<!-- *************************************************************js for toggle menu********************************************************** -->
+    <script>
+      var MenuItems = document.getElementById("MenuItems")
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle(){
+        if(MenuItems.style.maxHeight == "0px")
+        {
+          MenuItems.style.maxHeight = "200px";
+        }
+        else{
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+  </body>
+</html>

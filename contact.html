@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frilux | Contact Us</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+
+
+    <style media="screen">
+
+      *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+      }
+
+      body{
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .navbar{
+        display:flex;
+        align-items:center;
+        padding:20px;
+      }
+
+      nav{
+        flex:1;
+        text-align:right;
+      }
+
+      nav ul{
+        display:inline-block;
+        list-style-type:none;
+      }
+
+      nav ul li{
+        display:inline-block;
+        margin-right:20px;
+      }
+
+      a{
+        text-decoration:none;
+        color:#555;
+      }
+
+      nav ul li::after{
+        content:'';
+        width:0%;
+        height:2px;
+        background:#555;
+        display:block;
+        margin:auto;
+        transition:0.5s;
+      }
+
+      nav ul li:hover::after{
+        width:100%;
+      }
+
+      p{
+        color:#555;
+      }
+
+      .container{
+        max-width:1300px;
+        margin:auto;
+        padding-left:25px;
+        padding-right:25px;
+      }
+
+      .row{
+        display:flex;
+        align-items:center;
+        flex-wrap:wrap;
+        justify-content:space-around;
+        padding:25px;
+      }
+
+      .header .col-2{
+        text-align:center;
+        padding-bottom:100px;
+      }
+
+      .col-2{
+        flex-basis:50%;
+        min-width:300px;
+      }
+
+      .col-2 h1{
+        font-size:60px;
+        line-height:60px;
+        margin:25px 0;
+        color:#555;
+        text-align:center;
+      }
+      .col-2 p{
+        text-align:center;
+      }
+
+      .btn{
+        display:inline-block;
+        background:#ff9966;
+        color:#fff;
+        padding:8px 30px;
+        margin:30px 0;
+        border-radius:30px;
+        transition:background 0.5s;
+      }
+
+      .btn:hover{
+        background:#563434;
+      }
+
+      .header{
+        background:#ffffcc;
+      }
+
+      .header .row{
+        margin-top:70px;
+      }
+
+      .col-3{
+        flex-basis:30%;
+        min-width:250px;
+        margin-bottom:30px;
+      }
+
+      .col-3 p{
+        text-align:center;
+      }
+
+      .title{
+        text-align:center;
+        margin:0 auto 50px;
+        position:relative;
+        line-height:50px;
+        color:#555;
+      }
+
+      .title::after{
+        content:'';
+        background:#ff9966;
+        width:80px;
+        height:5px;
+        border-radius:5px;
+        position:absolute;
+        bottom:0;
+        left:50%;
+        transform:translateX(-50%);
+      }
+
+      /* footer */
+      .footer{
+        background:#000;
+        color:#8a8a8a;
+        font-size:14px;
+        padding:60px 0 20px;
+      }
+
+      .footer h3{
+        color:#fff;
+        margin-bottom:20px;
+      }
+
+      .footer-col-3{
+        min-width:250px;
+        margin-bottom:20px;
+        flex:1;
+        text-align:center;
+      }
+
+      ul{
+        list-style-type:none;
+      }
+
+      .footer hr{
+        border:none;
+        background:#b5b5b5;
+        height:1px;
+        margin:20px 0;
+      }
+
+      .copyright{
+        text-align:center;
+      }
+
+      .menu-icon{
+        width:28px;
+        margin-left:20px;
+        display:none;
+      }
+
+      /* contact us page */
+      .contact-page{
+        padding:50px 0;
+        background:radial-gradient(#fff,#ffffcc);
+      }
+
+      .form-container{
+        background:#fff;
+        width:300px;
+        height:400px;
+        position:relative;
+        text-align:center;
+        padding:20px 0;
+        margin:auto;
+        box-shadow:0 0 20px 0px rgba(0,0,0,0.1);
+        overflow:hidden;
+      }
+
+      .form-container span{
+        font-weight:bold;
+        padding:0 10px;
+        color:#555;
+        cursor:pointer;
+        width:100px;
+        display:inline-block;
+      }
+
+      .form-btn{
+        display:inline-block;
+      }
+
+      .form-container form{
+        max-width:300px;
+        padding: 0 20px;
+        position:absolute;
+        top:80px;
+        transition:transform 1s;
+      }
+
+      form input{
+        width:100%;
+        height:30px;
+        margin:10px 0;
+        padding:0 10px;
+        border:1px solid #ccc;
+      }
+
+      form textarea{
+          width:100%;
+          height:70px;
+          margin:10px 0;
+          padding:0 10px;
+          border:1px solid #ccc;
+      }
+
+      form .btn{
+        width:100%;
+        border:none;
+        cursor:pointer;
+        margin:10px 0;
+      }
+
+      .col-3{
+        flex-basis:30%;
+        min-width:250px;
+        margin-bottom:30px;
+      }
+
+
+      /* media query for menu */
+      @media only screen and (max-width:800px){
+        .nav-links ul{
+          position:absolute;
+          top:70px;
+          left:0;
+          background:#333;
+          width:100%;
+          overflow:hidden;
+          transition: max-height 0.5s;
+        }
+
+        .nav-links ul li{
+          display:block;
+          margin-right:50px;
+          margin-top:10px;
+          margin-top:10px;
+        }
+
+        .nav-links ul li a{
+          color:#fff;
+        }
+
+        .menu-icon{
+          display:block;
+          cursor:pointer;
+        }
+      }
+
+      /* media query for less than 600 screen size */
+      @media only screen and (max-width:600px){
+        .row{
+          text-align:center;
+        }
+
+        .col-2, .col-3{
+          flex-basis:100%;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+
+<!-- *************************************************************navogation bar********************************************************* -->
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <a href="index.html"><img src="images/logo1.png" alt="" width="125px"></a>
+          </div>
+          <nav class="nav-links">
+            <ul id="MenuItems">
+              <li> <a href="index.html">HOME</a> </li>
+              <li> <a href="gallery.html">GALLERY</a> </li>
+              <li> <a href="contact.html">CONTACT US</a> </li>
+              <li> <a href="sign-up.html">SIGN UP</a> </li>
+            </ul>
+          </nav>
+          <img src="images/cart.png" alt="" width="30px" height="30px" hidden>
+          <img src="images/menu.png" alt="" class="menu-icon" onclick="menutoggle()">
+        </div>
+      </div>
+    </div>
+
+
+<!-- ***************************************************************contact page********************************************************* -->
+    <div class="contact-page">
+      <div class="row">
+        <div class="col-2">
+          <h1> CONTACT US </h1>
+          <p>You are more than welcome to share your thoughts and comments about us.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <div class="form-container">
+              <span>Send us a Message</span>
+
+
+<!-- ********************************************************************form************************************************************ -->
+            <form>
+              <input type="text" placeholder="First name" name="" value="">
+              <input type="text" placeholder="Last name" name="" value="">
+              <input type="email" name="" value="" placeholder="Email">
+              <textarea name="message" rows="8" cols="35" placeholder="Message"></textarea>
+              <button type="submit" class="btn" name="button">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+<!-- ***********************************************************additional contact details************************************************ -->
+      <div class="row">
+        <div class="col-3">
+          <h2 class="title">Call Us</h2>
+          <p>Call us to know more about our products and give your feedback about our services.
+          07* *** ****</p>
+        </div>
+        <div class="col-3">
+          <h2 class="title">Message Us</h2>
+          <p>For offical inquiries send a mail to <strong>friluxSunshades@gmail.com</strong> </p>
+        </div>
+        <div class="col-3">
+          <h2 class="title">Visit Us</h2>
+          <p>Visit our main branch at Kandy City Center
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+
+        </div>
+        <div class="col-3">
+
+        </div>
+        <div class="col-3">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.549383665225!2d80.63492611418408!3d7.291997994736927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3662be0c57725%3A0x79ab90a53deb7071!2sKandy%20City%20Centre!5e0!3m2!1sen!2slk!4v1606192761431!5m2!1sen!2slk"
+          width="100%" height="300px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+      </div>
+
+    </div>
+    <!-- ********************************************************end of contact page****************************************************** -->
+
+
+
+<!-- ******************************************************************footer************************************************************ -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-3">
+            <h3>Frilux Sunshades</h3>
+            <p>Have fun in the sun with Sunglasses from Filux, <br> which provide large range of sunglasses
+              from world class brands.</p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li> <a href="sign-up.html">Sign Up</a> </li>
+              <li> <a href="contact.html">Contact Us</a> </li>
+              <li> <a href="construction.html">Privacy policy</a> </li>
+            </ul>
+          </div>
+          <div class="footer-col-3">
+            <h3>Follow Us</h3>
+            <ul>
+              <li> <a href="construction.html">Facebook</a> </li>
+              <li> <a href="contact.html">Whatsapp</a> </li>
+              <li> <a href="construction.html">Instagram</a> </li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+        <p class="copyright"> &copy; Copyright 2021 | Geex Solutions <br> Images are used for illustration purpose only </p>
+      </div>
+    </div>
+
+
+    <!-- *********************************************************js for toggle menu****************************************************** -->
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle(){
+        if(MenuItems.style.maxHeight == "0px")
+        {
+          MenuItems.style.maxHeight = "200px";
+        }
+        else{
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+  </body>
+</html>
